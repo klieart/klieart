@@ -16,8 +16,7 @@ private:
   int moves;
   int discNum;
   CTimer qTimer;
-
-  void doRecurse(int from, int to, int n);
+  void recursion(int from, int to, int n);
   void move(int from, int to,int disc);
 
 public:

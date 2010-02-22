@@ -2,24 +2,20 @@
 
 Peg::Peg(string str,int n)
 {
-    name = str;
-    for(int i = n; i >= 1;i--)
-        discStack.push(i);
+	disk = str;
+	for(int i = n; i >= 1;i--)
+		discStack.push(i);
 }
-string Peg::getName ()
-{
-    return name;
-}
+
 void Peg::push(int n)
 {
-    if(discStack.empty() || discStack.top() > n)
-        discStack.push(n);
-    else
-        cerr << "invalid disc move";
+	if(discStack.empty() || discStack.top() > n)
+		discStack.push(n);
+	else
+		cerr << "Invalid move!";
 }
-int Peg::pop()
+
+string Peg::getName ()
 {
-    int returnValue = discStack.top();
-    discStack.pop();
-    return returnValue;
+	return disk;
 }
