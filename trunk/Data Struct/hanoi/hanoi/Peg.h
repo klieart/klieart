@@ -11,13 +11,13 @@ class Peg
 {
 private:
     stack<int> discStack;
-    string name;
+    string disk;
+	void push(int n);
+
 public:
     Peg(string str,int n);
     string getName();
-    void push(int n);
-    int pop();
-
+    
 };
 
 #endif // PEG_H

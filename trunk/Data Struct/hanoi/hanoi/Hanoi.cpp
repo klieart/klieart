@@ -31,7 +31,7 @@ Hanoi::Hanoi(int n)
     discNum = n;
 }
 
-void Hanoi::doRecurse(const int from,const int to,const int n)
+void Hanoi::recursion(const int from,const int to,const int n)
 {
     if (n == 1)
         move (from, to, n);
@@ -39,11 +39,11 @@ void Hanoi::doRecurse(const int from,const int to,const int n)
     {
         int destNext = (to+1)%5;
         int destMinus = (to+4)%5;
-        doRecurse(from, to,n-1);
+        recursion(from, to,n-1);
         move(from, destMinus,n);
-        doRecurse(to, destNext, n-1);
+        recursion(to, destNext, n-1);
         move(destMinus, to, n);
-        doRecurse(destNext, to, n-1);
+        recursion(destNext, to, n-1);
     }
 }
 
@@ -57,7 +57,7 @@ void Hanoi::move(int from, int to, int size)
 void Hanoi::runHanoi()
 {
     qTimer.Start();
-    doRecurse(0,2,discNum);
+    recursion(0,2,discNum);
     qTimer.End();
 }
 
